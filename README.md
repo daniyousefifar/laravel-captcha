@@ -1,8 +1,8 @@
 # Laravel Captcha
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/mydaniel/laravel-captcha.svg?style=flat-square)](https://packagist.org/packages/your-vendor/laravel-captcha)
-[![Total Downloads](https://img.shields.io/packagist/dt/your-vendor/laravel-captcha.svg?style=flat-square)](https://packagist.org/packages/mydaniel/laravel-captcha)
-[![License](https://img.shields.io/packagist/l/your-vendor/laravel-captcha.svg?style=flat-square)](https://github.com/daniyousefifar/laravel-captcha/blob/main/LICENSE)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/mydaniel/laravel-captcha.svg?style=flat-square)](https://packagist.org/packages/mydaniel/laravel-captcha)
+[![Total Downloads](https://img.shields.io/packagist/dt/mydaniel/laravel-captcha.svg?style=flat-square)](https://packagist.org/packages/mydaniel/laravel-captcha)
+[![License](https://img.shields.io/packagist/l/mydaniel/laravel-captcha.svg?style=flat-square)](https://github.com/daniyousefifar/laravel-captcha/blob/master/LICENSE)
 
 A modern, highly customizable, and secure captcha package for Laravel.
 
