@@ -1,0 +1,49 @@
+{
+    "name": "mydaniel/laravel-captcha",
+    "description": "A modern, highly customizable, and secure captcha package for Laravel.",
+    "keywords": [
+        "laravel",
+        "captcha",
+        "security",
+        "validation",
+        "form-protection"
+    ],
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Yousefi Far",
+            "email": "daniyousefifar@gmail.com",
+            "homepage": "https://github.com/daniyousefifar"
+        }
+    ],
+    "require": {
+        "php": "^8.0|^8.1|^8.2|^8.3|^8.4",
+        "illuminate/config": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/filesystem": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/hashing": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "intervention/image": "~3.0",
+        "ext-gd": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyDaniel\\Captcha\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MyDaniel\\Captcha\\CaptchaServiceProvider"
+            ],
+            "aliases": {
+                "Captcha": "MyDaniel\\Captcha\\Facades\\Captcha"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
