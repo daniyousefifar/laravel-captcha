@@ -4,6 +4,7 @@ namespace MyDaniel\Captcha\Rules;
 
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Translation\PotentiallyTranslatedString;
 
 /**
  * Class Captcha
@@ -13,9 +14,9 @@ use Illuminate\Contracts\Validation\ValidationRule;
 class Captcha implements ValidationRule
 {
     /**
-     * @var string
+     * @var string|null
      */
-    protected string $key;
+    protected ?string $key;
 
     /**
      * @var string
@@ -25,23 +26,28 @@ class Captcha implements ValidationRule
     /**
      * Create a new rule instance.
      *
-     * @param  string  $key  The captcha key from the request.
+     * @param  string|null  $key  The captcha key from the request.
      * @param  string  $config  The captcha configuration profile to use for validation.
      */
-    public function __construct(string $key, string $config = 'default')
+    public function __construct(?string $key, string $config = 'default')
     {
         $this->key = $key;
-
         $this->config = $config;
     }
 
     /**
      * Run the validation rule.
      *
-     * @param  Closure(string): \Illuminate\Translation\PotentiallyTranslatedString  $fail
+     * @param  Closure(string): PotentiallyTranslatedString  $fail
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
+        if (empty($this->key)) {
+            $fail('captcha::validation.captcha')->translate();
+
+            return;
+        }
+
         if (!app('captcha')->check($value, $this->key, $this->config)) {
             $fail('captcha::validation.captcha')->translate();
         }
